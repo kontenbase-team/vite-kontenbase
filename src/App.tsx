@@ -8,13 +8,9 @@ export default function App() {
   const getPosts = async () => {
     const { data, error } = await kontenbaseClient.service("posts").find();
 
-    if (error) {
-      alert(error.message);
-    } else if (data) {
-      setPosts(data);
-    } else {
-      alert("Failed to get all posts");
-    }
+    if (error) alert(error.message);
+    else if (data) setPosts(data);
+    else alert("Failed to get all posts");
   };
 
   useEffect(() => {
